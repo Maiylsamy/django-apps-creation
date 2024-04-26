@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student-score</title>
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Set a light gray background */
+}
+
+/* Center the container horizontally and vertically */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: lime; /* Set background color to lime */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Style the form elements */
+.container form {
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+}
+
+.container table {
+  margin-bottom: 20px;
+}
+
+.container input[type="text"],
+.container input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Style the buttons */
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.button button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: red; /* Set background color to red */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background-color: darkred; /* Darken the background color on hover */
+
+
+}
+.result{
+  margin-top: 8px;
+  text-align:center
+}
+    </style>
+  </head>
+  <body>
+    <form action="read" method="post">
+      {% csrf_token %}
+      <div class="container">
+        <h1>STUDENT SCORE VALIDATION</h1>
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" id="name" value="{{name}}" /></td>
+          </tr>
+          <tr>
+            <td>Python:</td>
+            <td><input type="number" name="py" value="{{python}}"/></td>
+          </tr>
+          <tr>
+            <td>Java:</td>
+            <td><input type="number" name="java" value="{{java}}" /></td>
+          </tr>
+          <tr>
+            <td>MySQL:</td>
+            <td><input type="number" name="mysql" value="{{mysql}}" /></td>
+          </tr>
+          <tr>
+            <td>HTML:</td>
+            <td><input type="number" name="html" value="{{ html }}" /></td>
+          </tr>
+          <tr>
+            <td>Django:</td>
+            <td><input type="number" name="django" value="{{django }}" /></td>
+          </tr>
+        </table>
+        <div class="button">
+          <button type="submit" name="action" value="total">Total</button
+          ><button type="submit" name="action" value="percentage">
+            Percentage</button
+          ><button type="submit" name="action" value="grade">Grade</button
+          ><button type="submit" name="action" value="status">Status</button>
+        </div>
+        <input type="text" name="result" class="result" value="{{result}}" >
+      </div>
+    </form>
+  </body>
+</html>

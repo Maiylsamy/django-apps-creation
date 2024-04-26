@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detials</title>
+</head>
+<body>
+<form method = "post" action ="display">
+     {% csrf_token %}
+    <h1>login page</h1>
+<table>
+    <tr>
+        <td>Name:</td>
+        <td><input type="text" name="txtname"></td>
+    </tr>
+    <tr>
+        <td>age:</td>
+        <td><input type="number" name="txtage"></td>
+    </tr>
+    <tr>
+        <td>course:</td>
+        <td><input type="checkbox" name = "txtcourse" value ="python">python
+            <br><input type="checkbox" name = "txtcourse" value="java">java</td>
+    </tr>
+    <tr>
+        <td>blood group:</td>
+        <td>
+        <input type="radio" name="blood group" value="A+ve">A+ve
+        <input type="radio" name="blood group" value="A-ve" >A-ve
+        <input type="radio" name="blood group"  value="B+ve">B+ve
+        <input type="radio" name="blood group" value="B-ve" >B-ve</td>
+    </tr>
+    <tr>
+       <td>Language </td>
+       <td> <input type="checkbox" name = "lang" value="Tamil">Tamil<input type="checkbox" name = "lang" value="English">English</td>
+
+
+    </tr>
+    <tr>
+        <td><input type="submit" value="SUBMIT"></td>
+    </tr>
+
+</table>
+</form>
+</body>
+</html>

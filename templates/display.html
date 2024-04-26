@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>student detials</title>
+
+</head>
+
+<body>
+    <table border="1" style="border: 2px dotted black;">
+        <colgroup ><col span="1" style="background-color: rgb(121, 180, 5);"><col style="background-color: rgb(212, 235, 39);"></colgroup>
+        <tr>
+            <td>student Name:</td>
+            <td>{{name}}</td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td>{{age}}</td>
+        </tr>
+        <tr>
+            <td>Course:</td>
+            <td>{{course}}</td>
+        </tr>
+        <tr>
+            <td>Language:</td>
+            <td>{% for i in lang %}{{  i }}{% endfor %}</td>
+        </tr>
+        <tr>
+            <td>Blood group</td>
+            <td>{{blood}}</td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
